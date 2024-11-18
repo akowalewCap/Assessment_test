@@ -60,6 +60,6 @@ Before setting up the project, make sure you have the following installed:
 After running the tests, cucumber-test-report.html report is generated. You can view the detailed results of your tests by opening this report in a browser. The report is located in the following directory:
 - Reports/cucumber-test-report.html
 
-### 5. Conclusion
+## 5. Conclusion
 
 This API test automation framework provides a scalable, maintainable, and reusable approach to automating API tests using Java, RestAssured, Cucumber and JUnit. By leveraging design pattern such as Page Object Model, the framework is well-structured and adaptable to future needs. With easy setup steps and clear organization, it ensures that API functionality is thoroughly tested and validated.
