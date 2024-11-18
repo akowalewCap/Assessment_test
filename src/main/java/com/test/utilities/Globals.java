@@ -4,6 +4,6 @@ import io.restassured.response.Response;
 import java.util.List;
 
 public class Globals {
-    public static Response response;
-    public static List<String> productTitle;
+	public static Response response;
+	public static List<String> productTitle;
 }

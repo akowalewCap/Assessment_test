@@ -8,7 +8,7 @@
   <artifactId>CucumberJavaProject</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
-  <properties>
+    <properties>
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -42,19 +42,6 @@
             <artifactId>javafaker</artifactId>
             <version>1.0.2</version>
         </dependency>
-        
-        <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
-		<dependency>
-	    	<groupId>tech.grasshopper</groupId>
-	    	<artifactId>extentreports-cucumber7-adapter</artifactId>
-	    	<version>1.9.1</version>
-		</dependency>
-	    	    
-	    <dependency>
-    		<groupId>com.aventstack</groupId>
-    		<artifactId>extentreports</artifactId>
-    		<version>5.0.9</version>
-	   </dependency>
 	</dependencies>
     
 </project>
