@@ -83,7 +83,7 @@ public class AddProduct extends Globals {
 
 	public void validateThatProductHasBeenAdded() {
 		// assert response code CREATED
-		Assert.assertEquals(20111, response.statusCode());
+		Assert.assertEquals(201, response.statusCode());
 	}
 
 	public void validateThatProductHasNotBeenAdded() {
