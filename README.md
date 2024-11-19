@@ -32,6 +32,21 @@ The architecture of the test automation framework is designed to be modular, sca
 
 The folder structure is organized in a way that allows easy maintenance and scalability. It follows the Page Object Model (POM) for separating the test logic and API interaction.
 
+### 2.2. Dynamic Data Creation
+
+- **ConfigurationReader Class**: The ConfigurationReader class is designed to handle reading from and writing to a configuration.properties file. It simplifies accessing and updating configuration data in a key-value format.
+- **Configuration File**: The configuration.properties file acts as the storage for key-value pairs.
+- **Generating Data Using Java Faker**: The Faker library is used to generate random but realistic fake data. It provides methods for generating fake product names, prices, descriptions, images, etc.
+- **Building the JSON Payload**: The fake data stored in configuration.properties is then used to construct a JSON payload for a POST, PUT and PATCH request.
+
+Here’s an explanation of how data creation works using the provided code:
+- **Generate Fake Data**: Use Faker to create random product details.
+- **Store in Properties File**: Save the generated data in configuration.properties using ConfigurationReader.set().
+- **Read Data and Build Payload**: Retrieve the data from configuration.properties and build a JSON object.
+- **Send API Request**: Use RestAssured to send a request with the generated data.
+
+This approach ensures dynamic and reusable test data generation, making it easy to automate API tests with realistic inputs.
+
 ## 3. Design Patterns Adopted
 
 ### 3.1. Page Object Model (POM)
