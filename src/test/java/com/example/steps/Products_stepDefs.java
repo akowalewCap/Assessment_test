@@ -1,9 +1,10 @@
-package com.test.steps;
+package com.example.steps;
 
-import com.test.api.GetProduct;
-import com.test.api.AddProduct;
-import com.test.api.UpdateProduct;
-import com.test.api.DeleteProduct;
+import com.example.api.AddProduct;
+import com.example.api.DeleteProduct;
+import com.example.api.GetProduct;
+import com.example.api.UpdateProduct;
+
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 

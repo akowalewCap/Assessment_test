@@ -1,21 +1,23 @@
-package com.test.api;
-
-import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
-
-import org.junit.Assert;
-import com.github.javafaker.Faker;
-import com.test.utilities.Globals;
-import com.test.utilities.ConfigurationReader;
+package com.example.api;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.junit.Assert;
+
+import com.example.utilities.ConfigurationReader;
+import com.example.utilities.Globals;
+import com.github.javafaker.Faker;
+
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+
 public class AddProduct extends Globals {
-	private Faker faker = new Faker();
 
 	public void addNewProduct() {
+		Faker faker = new Faker();
+		
 		// create fake data for new product
 		ConfigurationReader.set("title", faker.commerce().productName());
 		ConfigurationReader.set("price", faker.number().digits(3).toString());
@@ -37,6 +39,8 @@ public class AddProduct extends Globals {
 	}
 
 	public void addNewProductWithOneMissingField() {
+		Faker faker = new Faker();
+		
 		// create fake data for new product with missing title
 		ConfigurationReader.set("price", faker.number().digit());
 		ConfigurationReader.set("description", faker.commerce().color() + faker.commerce().material());
@@ -79,7 +83,7 @@ public class AddProduct extends Globals {
 
 	public void validateThatProductHasBeenAdded() {
 		// assert response code CREATED
-		Assert.assertEquals(201, response.statusCode());
+		Assert.assertEquals(20111, response.statusCode());
 	}
 
 	public void validateThatProductHasNotBeenAdded() {

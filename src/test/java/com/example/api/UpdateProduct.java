@@ -1,7 +1,4 @@
-package com.test.api;
-
-import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
+package com.example.api;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -9,9 +6,12 @@ import java.util.Map;
 
 import org.junit.Assert;
 
+import com.example.utilities.ConfigurationReader;
+import com.example.utilities.Globals;
 import com.github.javafaker.Faker;
-import com.test.utilities.ConfigurationReader;
-import com.test.utilities.Globals;
+
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 
 public class UpdateProduct extends Globals {
 	private Faker faker = new Faker();

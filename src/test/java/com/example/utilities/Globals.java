@@ -1,7 +1,8 @@
-package com.test.utilities;
+package com.example.utilities;
+
+import java.util.List;
 
 import io.restassured.response.Response;
-import java.util.List;
 
 public class Globals {
 	public static Response response;

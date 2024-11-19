@@ -1,10 +1,11 @@
-package com.test.api;
+package com.example.api;
+
+import org.junit.Assert;
+
+import com.example.utilities.Globals;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import org.junit.Assert;
-
-import com.test.utilities.Globals;
 
 public class GetProduct extends Globals {
 	// send GET response for all products
