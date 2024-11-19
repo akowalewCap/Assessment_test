@@ -9,7 +9,7 @@ import io.restassured.http.ContentType;
 
 public class GetProduct extends Globals {
 	// send GET response for all products
-	public void getAllProducts() {
+	public static void getAllProducts() {
 		response = RestAssured.given().accept(ContentType.JSON).contentType(ContentType.JSON).when()
 				.get("https://api.escuelajs.co/api/v1/products");
 	}
@@ -20,6 +20,22 @@ public class GetProduct extends Globals {
 				.get("https://api.escuelajs.co/api/v1/products/" + String.valueOf(id));
 	}
 
+	public void getLastProduct() {
+		Integer lastProductId = null;
+
+		getAllProducts();
+		productsIds = response.path("id");
+
+		// if list of IDs is not empty, get last product
+		try {
+			lastProductId = productsIds.get(productsIds.size() - 1);
+			getSingleProduct(lastProductId);
+		} catch (Exception e) {
+			System.err.println("List of products is empty.");
+			e.printStackTrace();
+		}
+	}
+
 	public void validateThatAllProductsAreListed() {
 		// assert response code
 		Assert.assertEquals(200, response.statusCode());
@@ -28,7 +44,6 @@ public class GetProduct extends Globals {
 		productTitle = response.path("title");
 
 		// assert that all products titles are not null
-		productTitle.forEach(number -> Assert.assertNotNull(number));
 		productTitle.forEach(Assert::assertNotNull);
 
 		for (String productTitle : productTitle) {

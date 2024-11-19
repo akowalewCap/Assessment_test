@@ -17,10 +17,10 @@ public class AddProduct extends Globals {
 
 	public void addNewProduct() {
 		Faker faker = new Faker();
-		
+
 		// create fake data for new product
 		ConfigurationReader.set("title", faker.commerce().productName());
-		ConfigurationReader.set("price", faker.number().digits(3).toString());
+		ConfigurationReader.set("price", faker.number().digits(3));
 		ConfigurationReader.set("description", faker.commerce().color() + faker.commerce().material());
 		ConfigurationReader.set("images", faker.internet().image());
 		ConfigurationReader.set("categoryId", String.valueOf(faker.number().numberBetween(1, 5)));
@@ -35,12 +35,12 @@ public class AddProduct extends Globals {
 
 		// send POST response
 		response = RestAssured.given().accept(ContentType.JSON).contentType(ContentType.JSON).body(bodyMap).when()
-				.post("https://api.escuelajs.co/api/v1/products/");
+				.post("https://api.escuelajs.co/api/v1/products/").prettyPeek().andReturn();
 	}
 
 	public void addNewProductWithOneMissingField() {
 		Faker faker = new Faker();
-		
+
 		// create fake data for new product with missing title
 		ConfigurationReader.set("price", faker.number().digit());
 		ConfigurationReader.set("description", faker.commerce().color() + faker.commerce().material());

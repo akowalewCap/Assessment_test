@@ -5,6 +5,8 @@ import com.example.api.DeleteProduct;
 import com.example.api.GetProduct;
 import com.example.api.UpdateProduct;
 
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -15,14 +17,19 @@ public class Products_stepDefs {
 	DeleteProduct DeleteProduct = new DeleteProduct();
 
 	// steps for GET operations
-	@When("Get All Products")
+	@When("Get all products")
 	public void get_all_products() {
 		GetProduct.getAllProducts();
 	}
 
-	@When("Get A Single Product with ID {int}")
+	@When("Get a single product with ID {int}")
 	public void get_single_product(int id) {
 		GetProduct.getSingleProduct(id);
+	}
+
+	@When("Get last added product")
+	public void get_last_product() {
+		GetProduct.getLastProduct();
 	}
 
 	@Then("Validate that all products are listed")
@@ -31,6 +38,7 @@ public class Products_stepDefs {
 	}
 
 	@Then("Validate that product is listed")
+	@And("It is validated that product is listed")
 	public void validate_that_product_is_listed() {
 		GetProduct.validateThatSingleProductIsListed();
 	}
@@ -41,22 +49,23 @@ public class Products_stepDefs {
 	}
 
 	// steps for POST operations
-	@When("Add New Product")
+	@When("Add new product")
+	@Given("New product has been added")
 	public void add_new_product() {
 		AddProduct.addNewProduct();
 	}
 
-	@When("Add New Product With One Missing Field")
+	@When("Add New product with one missing field")
 	public void add_new_product_with_one_missing_field() {
 		AddProduct.addNewProductWithOneMissingField();
 	}
 
-	@When("Add New Product With All Missing Fields")
+	@When("Add new product with all missing fields")
 	public void add_new_product_with_all_missing_fields() {
 		AddProduct.addNewProductWithAllMissingFields();
 	}
 
-	@When("Add New Product With Incorrect Fields Values")
+	@When("Add new product with incorrect fields values")
 	public void add_new_product_with_incorrect_fields_values() {
 		AddProduct.addNewProductWithIncorrectFieldsValues();
 	}
@@ -72,9 +81,14 @@ public class Products_stepDefs {
 	}
 
 	// steps for PUT operations
-	@When("Update Product with ID {int}")
+	@When("Update product with ID {int}")
 	public void update_product(int id) {
 		UpdateProduct.updateProduct(id);
+	}
+
+	@When("Update last product")
+	public void update_last_product() {
+		UpdateProduct.updateLastProduct();
 	}
 
 	@When("Update Product with ID {int} Where Field Value Is Incorrect")
@@ -97,10 +111,14 @@ public class Products_stepDefs {
 	public void partially_update_product(int id) {
 		UpdateProduct.partiallyUpdateProduct(id);
 	}
-
 	@When("Partially Update Product with ID {int} Where Field Value Is Incorrect")
 	public void partially_update_product_with_incorrect_field_value(int id) {
 		UpdateProduct.partiallyUpdateProductWithIncorrectFieldValue(id);
+	}
+
+	@Then("Validate that product has not been found")
+	public void validate_that_product_has_not_been_found() {
+		UpdateProduct.validateThatProductHasNotBeenFound();
 	}
 
 	// steps for DELETE operations
