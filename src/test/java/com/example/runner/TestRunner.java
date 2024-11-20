@@ -9,9 +9,8 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		features = "src/test/resources/features",
 		glue = { "com.example.steps" }, 
-		plugin = { "pretty", "html:Reports/cucumber-test-report.html" }, 
-		monochrome = false, 
-		dryRun = true
+		plugin = { "pretty", "html:Reports/cucumber-test-report.html" },
+        dryRun = true // checks if all the steps have the step definition
 		)
 public class TestRunner {
 }

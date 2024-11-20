@@ -86,6 +86,22 @@ public class UpdateProduct extends Globals {
 				.patch("https://api.escuelajs.co/api/v1/products/" + String.valueOf(id));
 	}
 
+	public void partiallyUpdateLastProduct() {
+		Integer lastProductId = null;
+
+		GetProduct.getAllProducts();
+		productsIds = response.path("id");
+
+		// if list of IDs is not empty, get last product
+		try {
+			lastProductId = productsIds.get(productsIds.size() - 1);
+			partiallyUpdateProduct(lastProductId);
+		} catch (Exception e) {
+			System.err.println("List of products is empty.");
+			e.printStackTrace();
+		}
+	}
+
 	public void partiallyUpdateProductWithIncorrectFieldValue(int id) {
 		// create fake data for new product
 		Faker faker = new Faker();
