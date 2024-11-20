@@ -6,7 +6,7 @@ public class Hooks {
     @Before
     public void envSetUp(){
         String environment = System.getenv("ENV");
-        String operatingSystem = System.getenv("OS");
+        String operatingSystem = System.getProperty("os.name");
 
         System.out.println("Running tests on " + environment + " environment.");
         System.out.println("Operating System - " + operatingSystem);
