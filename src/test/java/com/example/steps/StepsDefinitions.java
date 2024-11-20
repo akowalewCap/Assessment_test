@@ -10,7 +10,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Products_stepDefs {
+public class StepsDefinitions {
     GetProduct GetProduct = new GetProduct();
     AddProduct AddProduct = new AddProduct();
     UpdateProduct UpdateProduct = new UpdateProduct();
