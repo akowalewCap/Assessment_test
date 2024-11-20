@@ -22,8 +22,6 @@ The solution adopts the following approach:
 - **BDD with Cucumber**: The framework utilizes **Behavior-Driven Development (BDD)** through **Cucumber**. BDD enables writing tests in a human-readable format, using **Gherkin syntax**. This approach encourages collaboration between developers, QA teams, and stakeholders to define clear and understandable test scenarios. 
 - **Assertions**: Responses from the API are validated using assertions on status codes, response bodies, headers, and JSON structure.
 
----
-
 ## 2. Architecture of the Test Automation Framework
 
 The architecture of the test automation framework is designed to be modular, scalable, and easy to extend. 
