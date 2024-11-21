@@ -35,7 +35,7 @@ public class AddProduct extends Globals {
 
 		// send POST response
 		response = RestAssured.given().accept(ContentType.JSON).contentType(ContentType.JSON).body(bodyMap).when()
-				.post("https://api.escuelajs.co/api/v1/products/").prettyPeek().andReturn();
+				.post("https://api.escuelajs.co/api/v1/products/");
 	}
 
 	public void addNewProductWithOneMissingField() {

@@ -7,7 +7,7 @@ Feature: GET PRODUCTS
 
   @RegressionTest
   Scenario: GET API Test 2 - get a single product
-    When Get a single product with ID 41
+    When Get a single product with ID 116
     Then Validate that product is listed
 
   @RegressionTest
